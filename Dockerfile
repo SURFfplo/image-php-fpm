@@ -1,7 +1,7 @@
-FROM php:7.3.3-fpm-alpine
+FROM php:7.3.5-fpm-alpine
 LABEL image="php-fpm"
-LABEL versie="0.1"
-LABEL datum="2019 04 04"
+LABEL versie="0.2"
+LABEL datum="2019 05 13"
 
 # Use the default production configuration
 RUN cp "/usr/local/etc/php/php.ini-production" "/usr/local/etc/php/php.ini"
@@ -12,6 +12,6 @@ RUN cp "/usr/local/etc/php/php.ini-production" "/usr/local/etc/php/php.ini"
 #    && docker-php-ext-install gmp
 
 # ldap: used by idp
-# RUN apk add --update --no-cache libldap openldap-dev php7-ldap \
-#     && docker-php-ext-configure ldap \
-#     && docker-php-ext-install ldap
+RUN apk add --update --no-cache openldap-dev php7-ldap \
+    && docker-php-ext-configure ldap \
+    && docker-php-ext-install ldap
