@@ -12,6 +12,6 @@ RUN cp "/usr/local/etc/php/php.ini-production" "/usr/local/etc/php/php.ini"
 #    && docker-php-ext-install gmp
 
 # ldap: used by idp
-RUN apk add --update --no-cache libldap openldap-dev php7-ldap \
-    && docker-php-ext-configure ldap \
-    && docker-php-ext-install ldap
+# RUN apk add --update --no-cache libldap openldap-dev php7-ldap \
+#     && docker-php-ext-configure ldap \
+#     && docker-php-ext-install ldap
