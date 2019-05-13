@@ -1,4 +1,4 @@
-FROM php:7.3.5-fpm-alpine
+FROM php:7.2.18-fpm-alpine
 LABEL image="php-fpm"
 LABEL versie="0.2"
 LABEL datum="2019 05 13"
