@@ -15,3 +15,8 @@ RUN cp "/usr/local/etc/php/php.ini-production" "/usr/local/etc/php/php.ini"
 RUN apk add --update --no-cache openldap-dev php7-ldap \
     && docker-php-ext-configure ldap \
     && docker-php-ext-install ldap
+
+# mysql pdo: used by account & portal
+RUN apk add --update --no-cache php7-pdo_mysql \
+    && docker-php-ext-configure pdo_mysql \
+    && docker-php-ext-install pdo_mysql
