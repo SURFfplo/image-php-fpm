@@ -20,3 +20,8 @@ RUN apk add --update --no-cache openldap-dev php7-ldap \
 RUN apk add --update --no-cache php7-pdo_mysql \
     && docker-php-ext-configure pdo_mysql \
     && docker-php-ext-install pdo_mysql
+
+# copy script to configure stuff
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
