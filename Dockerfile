@@ -24,4 +24,4 @@ RUN apk add --update --no-cache php7-pdo_mysql \
 # copy script to configure stuff
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh", "docker-php-entrypoint"]
